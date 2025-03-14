@@ -1,0 +1,17 @@
+# Qt 编译输出文件
+*.pro.user
+*.obj
+*.o
+*.exe
+*.dll
+*.so
+*.dylib
+*.qmake.stash
+Makefile*
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*.qmlc
+*.qrc.dep
+*.autosave
+build-*/
