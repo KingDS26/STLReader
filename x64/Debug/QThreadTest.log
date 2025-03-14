@@ -1,0 +1,4 @@
+﻿   Qt/MSBuild: 3.3.1.1
+   Qt: 5.14.2
+  QThreadTest.cpp
+  QThreadTest.vcxproj -> D:\VSProjects\QtProjects\QThreadTest\x64\Debug\QThreadTest.exe
