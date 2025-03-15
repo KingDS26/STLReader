@@ -5,7 +5,10 @@
 
 #include <QString>
 #include <string>
-#include <vtkGenericOpenGLRenderWindow.h> // 替代 vtkRenderWindow
+#include <vtkGenericOpenGLRenderWindow.h>
+#include <vtkSmartPointer.h>
+#include "STLLoaderThread.h"  //子线程类
+
 
 class QThreadTest : public QMainWindow
 {
@@ -16,10 +19,14 @@ public:
     ~QThreadTest();
 
 private:
-    QString filePath;
     vtkSmartPointer<vtkGenericOpenGLRenderWindow> vtkRenderWindow; // VTK 渲染窗口
-    void loadAndDisplaySTL(const QString&);
-    
+
+    STLLoaderThread* loaderThread;  //子线程对象
+ 
+private slots:
+    void onLoadingFinished(vtkSmartPointer<vtkActor> actor);
+
+    void onErrorOccurred(const QString& message);
 
 private:
     Ui::QThreadTestClass ui;

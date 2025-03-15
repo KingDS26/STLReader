@@ -4,10 +4,17 @@
 
 #include "QThreadTest.h"
 #include <QtWidgets/QApplication>
+#include <vtkSmartPointer.h>
+#include <vtkActor.h>
+#include <QMetaType>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    // 注册 vtkSmartPointer<vtkActor> 类型
+    qRegisterMetaType<vtkSmartPointer<vtkActor>>("vtkSmartPointer<vtkActor>");
+
     QThreadTest w;
     w.setWindowTitle("STL文件查看器");
     w.show();
